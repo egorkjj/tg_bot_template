@@ -22,12 +22,12 @@ async def main() -> None:
     dp = Dispatcher(bot, storage=storage) 
     bot['config'] = config
     register_all_handlers(dp)
-    try:
-        await dp.start_polling()
-    finally:
-        await dp.storage.close()
-        await dp.storage.wait_closed()
-        await bot.session.close()
+    while True:
+        try:
+            await dp.start_polling()
+        except Exception as e:
+            print(e)
+            pass
 
 
 if __name__ == '__main__':
