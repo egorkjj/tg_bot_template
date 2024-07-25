@@ -26,8 +26,8 @@ async def main() -> None:
         try:
             await dp.start_polling()
         except Exception as e:
-            print(e)
-            pass
+            if str(e) != "Polling already started":
+                print(e)
 
 
 if __name__ == '__main__':
