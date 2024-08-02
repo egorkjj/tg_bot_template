@@ -26,7 +26,7 @@ async def main() -> None:
         try:
             await dp.start_polling()
         except Exception as e:
-            if str(e) != "Polling already started":
+            if not isinstance(e, RuntimeError):
                 print(e)
 
 

@@ -11,7 +11,7 @@ host = env.str("DB_HOST")
 name = env.str("DB_NAME")
 
 
-DATABASE_URL = f"postgresql+psycopg2://{user_db}:{passw}{host}/{name}"
+DATABASE_URL = "" f"postgresql+psycopg2://{user_db}:{passw}{host}/{name}"
 
 # Создание объекта Engine
 engine = create_engine(DATABASE_URL)
