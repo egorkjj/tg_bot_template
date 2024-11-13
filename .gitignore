@@ -5,3 +5,5 @@
 tg_bot/documents
 venv
 test.py
+*.pyc
+.DS_Store
